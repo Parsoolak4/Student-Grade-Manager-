@@ -1,63 +1,72 @@
+# 📚 Student Grade Manager
+[![C](https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white)](https://gcc.gnu.org/)
 
+A comprehensive command-line grade management system built in C that empowers educators to efficiently manage, analyze, and visualize student academic performance data.
 
-Student Grade Manager 📚
+## 🎯 Core Features
 
-A comprehensive grade management system built in C that allows educators to manage, analyze, and visualize student academic performance data.
-Features
-Grade Management
+### 📊 Grade Management
+- Complete grade spreadsheet visualization
+- Real-time student information updates
+- Seamless record deletion
+- Dynamic exam grade modifications
+- Automated total grade calculations
 
-View complete grade spreadsheet
-Update student information
-Delete student records
-Modify exam grades
-Calculate total grades automatically
+### 🔄 Advanced Sorting
+| Category | Description |
+|----------|-------------|
+| Student ID | Sort by 4-digit identifier |
+| Last Name | Alphabetical sorting |
+| Exam Grade | Numerical grade ordering |
+| Total Grade | Overall performance sorting |
 
-Sorting Capabilities
+### 📈 Visualization Tools
+- Interactive grade distribution histogram
+- Formatted spreadsheet display
+- ASCII art grade distribution
+- Customizable display formats
 
-Sort by Student ID
-Sort by Last Name
-Sort by Exam Grade
-Sort by Total Grade
+## 🛠️ Technical Architecture
 
-Visualization
+### 📁 Data Structure
+**Student Record Format:**
+```c
+struct Student {
+    int studentID;      // 4-digit
+    char firstName[50];
+    char lastName[50];
+    float assignments[3];
+    float midterm;
+    float finalExam;
+    float totalScore;
+};
+📊 Grade Calculation
+ComponentWeightAssignments25% (A1 + A2 + A3)Midterm25%Final Exam50%
+📂 Project Structure
+Copystudent-grade-manager/
+├── src/
+│   ├── student.h        // Structure definitions
+│   ├── spreadsheet.c    // Main program interface
+│   ├── ordering.c       // Sorting algorithms
+│   ├── calc.c          // Grade calculations
+│   └── data.c          // File I/O operations
+└── data/
+    └── Students.txt     // Student records
+🚀 Getting Started
+Prerequisites
 
-Display grade distribution histogram
-Clear, formatted spreadsheet view
-Visual grade distribution with ASCII art
+C compiler (GCC recommended)
+Standard C libraries
+Text editor
 
-Grade Mapping
+Installation
+bashCopy# Compile the program
+gcc -o grademanager *.c
 
-Customizable grade thresholds
-Dynamic grade calculation
-Support for A-F grading scale
-Automatic total score calculation
-
-Technical Details
-Data Structure
-Student records contain:
-
-Student ID (4-digit)
-First and Last Name
-Assignment Grades (A1, A2, A3)
-Midterm Grade
-Final Exam Grade
-Total Score
-
-Grade Calculation
-
-Assignments: 25% (A1 + A2 + A3)
-Midterm: 25%
-Final Exam: 50%
-
-File Structure
-
-student.h - Header file with struct definitions
-spreadsheet.c - Main program and menu interface
-ordering.c - Sorting functions
-calc.c - Grade calculations and display functions
-data.c - File I/O operations
-
-1. Display Spreadsheet
+# Run the application
+./grademanager
+📌 Menu Options
+Copy1. Display Spreadsheet
 2. Display Histogram
 3. Set sort column
 4. Update Last Name
@@ -65,19 +74,25 @@ data.c - File I/O operations
 6. Update Grade Mapping
 7. Delete Student
 8. Exit
-   
-Data Format
-The program expects student data in a pipe-delimited text file (Students.txt) with the following format:
+📄 Data Format
+Input File Format (Students.txt)
 CopyStudentID|LastName|FirstName|A1Grade|A2Grade|A3Grade|MidtermGrade|ExamGrade
-Requirements
+System Constraints
 
-C compiler (GCC recommended)
-Standard C libraries
-Text file with student data in the specified format
+Maximum capacity: 20 students
+Student ID: 4-digit format
+Grades: 0-100 range
+File format: Pipe-delimited
 
-Note
+⚙️ Configuration
 
-Maximum support for 20 students
-Grade thresholds are customizable
-All grades are validated upon entry
-Student IDs must be 4 digits
+Customizable grade thresholds
+Flexible grading scale (A-F)
+Adjustable weighting system
+Modifiable display formats
+
+🤝 Contributing
+I welcome contributions! To contribute:
+Fork the repository
+Create a feature branch
+Submit a pull request
